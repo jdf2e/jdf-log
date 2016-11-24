@@ -61,7 +61,7 @@ module.exports.profile = function(name, startFormatter, endFormatter) {
       delete profilers[name];
       return;
     }
-    module.exports.info(`Finished '${'output'.cyan}' after ${timeSpan.toString().magenta} ms`, { igl: true }); // igl意思是ignore level
+    module.exports.info(`Finished '${name.cyan}' after ${timeSpan.toString().magenta} ms`, { igl: true }); // igl意思是ignore level
   } else {
     profilers[name] = {
       time: now,

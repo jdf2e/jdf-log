@@ -1,6 +1,6 @@
 {
   "name": "jdf-log",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "jdf log module",
   "main": "index.js",
   "repository": {
