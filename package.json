@@ -1,0 +1,33 @@
+{
+  "name": "jdf-log",
+  "version": "0.0.1",
+  "description": "jdf log module",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdf2e/jdf-log.git"
+  },
+  "scripts": {
+    "lint": "eslint index.js",
+    "publish": "npm publish"
+  },
+  "keywords": [
+    "jdf",
+    "log"
+  ],
+  "author": "catalsdevelop@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jdf2e/jdf-log/issues"
+  },
+  "homepage": "https://github.com/jdf2e/jdf-log#readme",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "winston": "^2.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.10.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0"
+  }
+}
