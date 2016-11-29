@@ -80,7 +80,20 @@ const methods = ['error', 'warn', 'info', 'verbose', 'debug', 'silly'];
 
 methods.forEach((method) => {
   module.exports[method] = function() {
-    logger[method].apply(logger, Array.prototype.slice.call(arguments)) // eslint-disable-line
+    const args = Array.prototype.slice.call(arguments);// eslint-disable-line
+    // 对error方法做一些特殊处理，如果直接打印一个error对象
+    // 那么就把它的stack输出，因为stack已经包含了主要信息，但是，如果是一个继承自
+    // Error的子类，可能扩展了一些属性，就没有办法来输出了。
+    // 对于一个对象，增加一个输出格式化参数
+    if (method === 'error' && args.length === 1) {
+      if (args[0] instanceof Error) {
+        args[0] = args[0].stack;
+      } else if (args[0] instanceof Object) {
+        args[0] = JSON.stringify(args[0], null, 2);
+      }
+    }
+
+    logger[method].apply(logger, args) // eslint-disable-line
   }
 });
 

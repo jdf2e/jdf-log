@@ -9,7 +9,7 @@
   },
   "scripts": {
     "lint": "eslint index.js",
-    "publish": "npm publish"
+    "release": "npm version patch && npm publish"
   },
   "keywords": [
     "jdf",
