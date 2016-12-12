@@ -58,10 +58,10 @@ module.exports.profile = function(name, startFormatter, endFormatter) {
     const timeSpan = now - then;
     if (profilers[name].end) {
       profilers[name].end(name, timeSpan);
-      delete profilers[name];
-      return;
+    } else {
+      module.exports.info(`Finished '${name.cyan}' after ${timeSpan.toString().magenta} ms`, { igl: true }); // igl意思是ignore level
     }
-    module.exports.info(`Finished '${name.cyan}' after ${timeSpan.toString().magenta} ms`, { igl: true }); // igl意思是ignore level
+    delete profilers[name];
   } else {
     profilers[name] = {
       time: now,

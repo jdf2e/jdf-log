@@ -9,7 +9,7 @@
   },
   "scripts": {
     "lint": "eslint index.js",
-    "release": "npm version patch && npm publish"
+    "release": "npm version patch && npm publish && git push --follow-tags"
   },
   "keywords": [
     "jdf",
